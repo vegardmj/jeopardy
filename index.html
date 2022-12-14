@@ -17,7 +17,7 @@
                 </div>
                 <div class="grid">
                     <div class="boards">
-                        <div class="card">100</div>
+                        <div onclick="cardClicked()" class="card">100</div>
                         <div class="card">100</div>
                         <div class="card">100</div>
                         <div class="card">100</div>
@@ -57,9 +57,17 @@
         </div>
     </div>
 
+    <script>
+
+        function cardClicked(event){
+            console.log(event.target);
+        }
+    </script>
+
     <style>
         .main{
             display: flex;
+            flex-direction: column;
             align-items: center;
         }
 
