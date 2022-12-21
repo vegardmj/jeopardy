@@ -37,14 +37,14 @@ function constructGrid(table){
 function constructTeams(){
     let div = document.getElementById("teams-container");
     
-    for(let team of config.teams){
+    for(let t of config.teams){
         let team = document.createElement("div");
         team.classList.add("team-wrapper");
         let scoreCard = document.createElement("div");
         scoreCard.classList.add("score-card");
         let temp = document.createElement("div");
         temp.classList.add("team")
-        temp.setAttribute("id", "team-id-" + value);
+        temp.setAttribute("id", "team-id-" + t.name);
         let teamNameElement = document.createElement("h3");
         teamNameElement.innerText = value;
         temp.appendChild(teamNameElement);
