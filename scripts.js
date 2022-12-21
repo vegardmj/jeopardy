@@ -103,6 +103,11 @@ function constructTeams(){
         temp.setAttribute("id", "team-id-" + t.name);
         let teamNameElement = document.createElement("h3");
         teamNameElement.innerText = t.name;
+        let delButton = document.createElement("button");
+        teamNameElement.innerText = "DELETE";
+        delButton.onclick = ()=>{
+            team.remove();
+        }
         temp.appendChild(teamNameElement);
         team.appendChild(temp);
         div.appendChild(team);
