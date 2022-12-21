@@ -53,6 +53,7 @@ h2.centered{
 }
 
 .team{
+    display: flex;
     margin: 0.5rem;
     padding: 1rem;
     border-radius: 4px;
