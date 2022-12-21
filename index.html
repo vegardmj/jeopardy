@@ -28,10 +28,12 @@
 
     <div class="add-note-wrapper done">
         <input type="text" id="note-input">
-        <button onclick="saveNote()">save</button>
-        <button onclick="cancelNote()">cancel</button>
+        <div class="button-container">
+            <button onclick="saveNote()">save</button>
+            <button onclick="cancelNote()">cancel</button>
+        </div>
     </div>
-    <div class="button-container">
+    <div class="button-container footer">
         <button class="big-button" onclick="save()">SAVE</button>
         <button class="big-button" onclick="start()">START</button>
     </div>
