@@ -36,15 +36,12 @@ function constructGrid(){
         let temp = document.createElement("div");
         temp.classList.add("row")
         for(let j = 0; j < column.length; j++){
-            let row = config.table[j];
+            let row = column[j];
             let card;
             card = document.createElement("div");
             card.classList.add("card")
             card.onclick = () => {
                 console.log("add note");
-                //currentCard = {column: column, row: row, columnIndex: i, rowIndex: j};
-                let element = document.querySelector(".add-note-wrapper");
-                //element.classList.remove("done");
             }
             card.classList.add("centered")
             card.innerText = row.text;
@@ -53,18 +50,6 @@ function constructGrid(){
         div.appendChild(temp);
     }
 }
-function saveNote(){
-    let input = document.getElementById("note-input");
-    config.table[currentCard.columnIndex][currentCard.rowIndex] = input.value;
-    let element = document.querySelector(".add-note-wrapper");
-    element.classList.add("done");
-    
-}
-function cancelNote(){
-    let element = document.querySelector(".add-note-wrapper");
-    element.classList.add("done");
-}
-var currentCard;
 var config;
 
 function save(){
