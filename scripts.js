@@ -84,3 +84,11 @@ function removeTeam(){
         }
     }
 }
+function renderTeams(){
+    let div = document.getElementById("teams-container");
+    for(let team of config.teams){
+        let temp = document.createElement("p");
+        temp.innerText = team.name + ": " + team.score.toString();
+        div.appendChild(temp);
+    }
+}

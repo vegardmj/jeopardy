@@ -12,18 +12,17 @@
 <body>
     <div class="main">
         <h1>Jeopardy</h1>
-        <div class="teams-creator">
-            <label for="team-input">Team name</label>
-            <input type="text" id="team-input" />
-            <button onclick="addTeam()">Add team</button>
-            <button onclick="removeTeam()">Remove team</button>
-        </div>
         <div class="boards">
             <div class="board" id="test"></div>
-            <div class="score-board" id="teams-container"></div>
         </div>
     </div>
-    <button onclick="test1()">test</button>
-
+    <div class="teams-creator">
+        <h2>Teams</h2>
+        <label for="team-input">Team name</label>
+        <input type="text" id="team-input" />
+        <button onclick="addTeam()">Add team</button>
+        <button onclick="removeTeam()">Remove team</button>
+    </div>
+    <div class="score-board" id="teams-container"></div>
 </body>
 </html>
