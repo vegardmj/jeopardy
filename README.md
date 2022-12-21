@@ -59,4 +59,6 @@ This may be useful to remember what the question for the current card was.
 
 I'm considering adding a reset button that removes all your set-up and lets you start over. This may be useful if something has gone wrong.
 
+---
+
 Enjoy!
