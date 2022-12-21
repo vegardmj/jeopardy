@@ -41,6 +41,8 @@ function constructGrid(){
             card.onclick = () => {
                 console.log("add note");
                 currentCard = {column, row};
+                let element = document.querySelector(".add-note-wrapper");
+                element.classList.remove("done");
             }
             card.classList.add("centered")
             card.innerText = row.text;
