@@ -70,6 +70,9 @@ function constructTeams(){
             currentCard.classList.add("done")
             temp.classList.remove("team-hover");
             constructTeams()
+
+            let undoButton = document.querySelector(".undo-button");
+            undoButton.classList.remove("done");
         }
         let teamNameElement = document.createElement("h3");
         teamNameElement.innerText = t.name + (showScore ? ": " + t.score.toString() : "");
@@ -84,6 +87,9 @@ function undo(){
     config.teams[config.teams.indexOf(currentTeam.value)].score -= Number(currentCard.dataset.value);
     currentCard.classList.remove("done");
     constructTeams()
+
+    let undoButton = document.querySelector(".undo-button");
+    undoButton.classList.add("done");
 }
 
 var config;

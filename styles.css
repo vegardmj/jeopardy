@@ -102,3 +102,8 @@ button{
 .card:active{
     border: 4px solid black;
 }
+.undo-button{
+    position: fixed;
+    left: 2rem;
+    top: 2rem;
+}
