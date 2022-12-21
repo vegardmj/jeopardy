@@ -44,7 +44,7 @@ function constructGrid(){
                 console.log("add note");
                 currentCard = {column: column, row: row, columnIndex: i, rowIndex: j};
                 let element = document.querySelector(".add-note-wrapper");
-                element.classList.remove("done");
+                //element.classList.remove("done");
             }
             card.classList.add("centered")
             card.innerText = row.text;
