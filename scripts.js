@@ -93,30 +93,22 @@ function addTeam(){
         name: value,
         score: 0
     });
-    renderTeams();
+    
+    let div = document.getElementById("teams-container");
+    let temp = document.createElement("div");
+    temp.setAttribute("id", "team-id-" + value);
+    temp.innerText = value;
+    div.appendChild(temp);
+    
 }
 function removeTeam(){
     console.log(config.teams);
-    let value = document.getElementById("team-input").value;
+    let value = document.getElementById("team-input");
     for(let i = 0; i < config.teams.length; i++){
         if(config.teams[i]?.name == value){
             delete config.teams[i];
             break;
         }
     }
-    renderTeams();
-}
-function renderTeams(){
-    let div = document.getElementById("teams-container");
-    
-    let child = div.lastElementChild; 
-    while (child) {
-        div.removeChild(child);
-        child = div.lastElementChild;
-    }
-    for(let team of config.teams){
-        let temp = document.createElement("p");
-        temp.innerText = team.name + ": " + team.score.toString();
-        div.appendChild(temp);
-    }
+    document.getElementById("team-id-" + value).remove();
 }
