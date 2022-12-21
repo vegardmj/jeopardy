@@ -15,7 +15,9 @@ function constructGrid(table){
     for(let column of table){
         let temp = document.createElement("div");
         for(let row of column){
-            temp.append('<div class="card">' + row + '</div>');
+            let rowElement = document.createElement("div");
+            rowElement.innerText = row;
+            temp.appendChild(rowElement);
         }
         div.appendChild(temp);
     }
@@ -28,10 +30,30 @@ function test1(){
 }
 
 
-
-
-
-
 function cardClicked(event){
     console.log(event.target);
+}
+
+var config = {}
+
+function save(){
+    window.localStorage.setItem("jeopardy", JSON.stringify(config))
+}
+
+function setConfig(){
+    let conf = {
+        teams: [
+            {
+                name: 'Team 1',
+                score: 200
+            },
+            {
+                name: 'Team 2',
+                score: 300
+            },
+        ],
+        table: getDummyTable()
+    }
+
+    config = conf;
 }
