@@ -91,6 +91,12 @@ function removeTeam(){
 }
 function renderTeams(){
     let div = document.getElementById("teams-container");
+    
+    let child = div.lastElementChild; 
+    while (child) {
+        div.removeChild(child);
+        child = div.lastElementChild;
+    }
     for(let team of config.teams){
         let temp = document.createElement("p");
         temp.innerText = team.name + ": " + team.score.toString();
