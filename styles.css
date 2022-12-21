@@ -24,7 +24,7 @@ html, body {
     flex-direction: column;
     width: 100%;
 }
-.column{
+.row{
     display: flex;
     flex-direction: row;
     width: 100%;
