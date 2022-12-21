@@ -64,6 +64,9 @@ function cardClicked(event){
 function save(){
     window.localStorage.setItem("jeopardy", JSON.stringify(config))
 }
+function start(){
+    window.location = "/jeopardy/play.html";
+}
 
 function setConfig(){
     let conf = {
