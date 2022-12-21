@@ -60,6 +60,7 @@ function save(){
     console.log("tempCategories", tempCategories)
     config.categories = tempCategories;
     window.localStorage.setItem("jeopardy", JSON.stringify(config))
+    
 }
 function start(){
     window.location = "/jeopardy/play.html";

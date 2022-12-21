@@ -41,6 +41,7 @@ html, body {
     margin: 0.5rem;
     padding: 1rem;
     border-radius: 4px;
+    border: 4px transparent black;
 }
 .centered{
     display: flex;
