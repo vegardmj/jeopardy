@@ -19,7 +19,7 @@ function constructHeaders(){
     row.classList.add("centered")
     for(let category of config.categories){
         let temp = document.createElement("input");
-        row.classList.add("category")
+        temp.classList.add("category")
         temp.value = category;
         row.appendChild(temp);
     }
@@ -54,6 +54,7 @@ function save(){
     document.querySelectorAll(".category").forEach((element)=>{
         tempCategories.push(element.value);
     })
+    console.log("tempCategories", tempCategories)
     config.categories = tempCategories;
     window.localStorage.setItem("jeopardy", JSON.stringify(config))
 }
