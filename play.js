@@ -63,11 +63,8 @@ function constructTeams(){
         }
         temp.ondragleave = () => {
             temp.classList.remove("team-hover");
-            currentTeam = {};
         }
         temp.ondrop = () => {
-            console.log(config.teams[config.teams.indexOf(currentTeam.value)]);
-            console.log(currentCard.value);
             config.teams[config.teams.indexOf(currentTeam.value)].score += Number(currentCard.dataset.value);
             currentCard.classList.remove("current-card")
             currentCard.classList.add("done")
@@ -81,6 +78,12 @@ function constructTeams(){
         div.appendChild(team);
     }
     master.appendChild(div);
+}
+
+function undo(){
+    config.teams[config.teams.indexOf(currentTeam.value)].score -= Number(currentCard.dataset.value);
+    currentCard.classList.remove("done");
+    constructTeams()
 }
 
 var config;
