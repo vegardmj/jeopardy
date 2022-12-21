@@ -89,6 +89,7 @@ function addTeam(){
     renderTeams();
 }
 function removeTeam(){
+    console.log(config.teams);
     let value = document.getElementById("team-input").value;
     for(let i = 0; i < config.teams.length; i++){
         if(config.teams[i].name == value){
