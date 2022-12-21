@@ -25,7 +25,6 @@ function constructGrid(){
                 if(card.dataset.note){
                     console.log("note: " + card.dataset.note);
                 }
-                card.classList.add("current-card");
                 currentCard = card;
             }
             card.ondragstart = () => {
