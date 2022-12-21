@@ -16,10 +16,11 @@ function constructHeaders(categories){
     let div = document.getElementById("grid");
     let row = document.createElement("div");
     row.classList.add("row");
+    row.classList.add("centered")
     for(let category of categories){
-        let temp = document.createElement("h2");
-        temp.classList.add("centered")
-        temp.innerText = category;
+        let temp = document.createElement("input");
+        row.classList.add("category")
+        temp.value = category;
         row.appendChild(temp);
     }
     div.appendChild(row);
@@ -56,6 +57,11 @@ function test1(){
 }
 
 function save(){
+    let tempCategories = [];
+    document.querySelectorAll(".category").forEach((element)=>{
+        tempCategories.push(element.value);
+    })
+    config.categories = categories;
     window.localStorage.setItem("jeopardy", JSON.stringify(config))
 }
 function start(){
