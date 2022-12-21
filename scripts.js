@@ -93,12 +93,13 @@ function constructTeams(){
         let teamNameElement = document.createElement("h3");
         teamNameElement.innerText = t.name;
         let delButton = document.createElement("button");
-        teamNameElement.innerText = "DELETE";
+        delButton.innerText = "DELETE";
         delButton.onclick = ()=>{
             team.remove();
             delete config.teams[config.teams.indexOf(t)];
         }
         temp.appendChild(teamNameElement);
+        temp.appendChild(delButton);
         team.appendChild(temp);
         div.appendChild(team);
     }
