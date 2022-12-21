@@ -32,7 +32,7 @@ function constructGrid(table){
         temp.classList.add("row")
         for(let row of column){
             let card;
-            card = document.createElement("button");
+            card = document.createElement("div");
             card.classList.add("card")
             card.onclick = () => {
                 console.log("note: " + card.dataset.note);
