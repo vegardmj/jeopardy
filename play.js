@@ -25,11 +25,8 @@ function constructGrid(){
                 if(card.dataset.note){
                     console.log("note: " + card.dataset.note);
                 }
-            }
-            card.ondrop = () => {
-                console.log("dropped")
-                card.classList.add("done");
-                config.team[config.team.indexOf(currentTeam.value)].score += card.value;
+                card.classList.add("current-card");
+                currentCard = card;
             }
             card.classList.add("centered")
             card.setAttribute("data-note", row.note)
@@ -42,6 +39,7 @@ function constructGrid(){
 }
 
 var currentTeam;
+var currentCard;
 
 function constructTeams(){
     let master = document.getElementById("teams-wrapper");
@@ -60,10 +58,16 @@ function constructTeams(){
         temp.setAttribute("id", "team-id-" + t.name);
         temp.ondragover = (event) => {
             console.log("ondragover")
-            event.preventDefault();
             currentTeam = {element: temp, value: t};
             console.log("currentTeam", currentTeam)
-            temp.classList.add("teams-hover");
+            temp.classList.add("team-hover");
+            event.preventDefault();
+        }
+        temp.ondrop = () => {
+            config.team[config.team.indexOf(currentTeam.value)].score += card.value;
+            currentCard.classList.remove("current-card")
+            currentCard.classList.add("done")
+            temp.classList.remove("team-hover");
         }
         let teamNameElement = document.createElement("h3");
         teamNameElement.innerText = t.name + (showScore ? ": " + t.score.toString() : "");

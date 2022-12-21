@@ -92,3 +92,6 @@ button{
 .categories{
     justify-content: space-around;
 }
+.current-card{
+    border: 4px solid black;
+}
