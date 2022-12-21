@@ -29,7 +29,7 @@ function constructGrid(){
             card.ondrop = () => {
                 console.log("dropped")
                 card.classList.add("done");
-                config.team[config.team.indexOf(currentTeam)].score += card.value;
+                config.team[config.team.indexOf(currentTeam.value)].score += card.value;
             }
             card.classList.add("centered")
             card.setAttribute("data-note", row.note)
@@ -61,7 +61,8 @@ function constructTeams(){
         temp.ondragover = (event) => {
             console.log("ondragover")
             event.preventDefault();
-            currentTeam = t;
+            currentTeam = {element: temp, value: t};
+            console.log("currentTeam", currentTeam)
             temp.classList.add("teams-hover");
         }
         let teamNameElement = document.createElement("h3");
