@@ -5,7 +5,7 @@ function getTable(){
     for(let i = 1; i<6; i++){
         let temp = [];
         for(let j = 1; j<6; j++){
-            temp.push({value: (100*i).toString()});
+            temp.push({text: (100*i).toString(), value: 100*i});
         }
         table.push(temp);
     }
@@ -39,7 +39,7 @@ function constructGrid(table){
             }
             card.classList.add("centered")
             card.setAttribute("data-note", row.note)
-            card.innerText = row.value;
+            card.innerText = row.text;
             temp.appendChild(card);
         }
         div.appendChild(temp);

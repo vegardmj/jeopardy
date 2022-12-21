@@ -24,20 +24,26 @@ function constructGrid(table){
             card.onclick = () => {
                 console.log("note: " + card.dataset.note);
             }
+            card.ondrop = () => {
+                card.classList.add("done");
+                config.team[config.team.indexOf(currentTeam)].score += card.value;
+            }
             card.classList.add("centered")
             card.setAttribute("data-note", row.note)
             card.setAttribute("draggable", "true")
-            card.innerText = row.value;
+            card.innerText = row.text;
             temp.appendChild(card);
         }
         div.appendChild(temp);
     }
 }
 
-function constructTeams(){
+var currentTeam;
+
+function constructTeams(teams){
     let div = document.getElementById("teams-container");
     
-    for(let t of config.teams){
+    for(let t of teams){
         let team = document.createElement("div");
         team.classList.add("team-wrapper");
         let scoreCard = document.createElement("div");
@@ -45,13 +51,15 @@ function constructTeams(){
         let temp = document.createElement("div");
         temp.classList.add("team")
         temp.setAttribute("id", "team-id-" + t.name);
+        temp.ondragover = () => {
+            currentTeam = t;
+        }
         let teamNameElement = document.createElement("h3");
-        teamNameElement.innerText = value;
+        teamNameElement.innerText = t.name + (showScore ? ": " + t.score.toString() : "");
         temp.appendChild(teamNameElement);
         team.appendChild(temp);
         div.appendChild(team);
     }
-    
 }
 
 var config;
@@ -62,4 +70,10 @@ function load(){
     config = JSON.parse(window.localStorage.getItem("jeopardy"));
     constructHeaders(config.categories);
     constructGrid(config.table);
+    constructTeams(config.teams)
+}
+
+var showScore = false;
+function toggleScore(){
+    showScore = !showScore;
 }
