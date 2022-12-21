@@ -39,7 +39,6 @@ function cardClicked(event){
     console.log(event.target);
 }
 
-var config = {}
 
 function save(){
     window.localStorage.setItem("jeopardy", JSON.stringify(config))
@@ -64,6 +63,9 @@ function setConfig(){
 }
 
 
+var config = {
+    teams: []
+}
 function addTeam(){
     let value = document.getElementById("team-input");
     config.teams.push({
