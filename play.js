@@ -21,6 +21,11 @@ function constructGrid(){
             let card;
             card = document.createElement("div");
             card.classList.add("card")
+            card.classList.add("centered")
+            card.setAttribute("data-note", row.note)
+            card.setAttribute("value", row.value)
+            card.setAttribute("draggable", "true")
+            card.innerText = row.text;
             card.onclick = () => {
                 if(card.dataset.note){
                     console.log("note: " + card.dataset.note);
@@ -30,10 +35,6 @@ function constructGrid(){
             card.ondragstart = () => {
                 currentCard = card;
             }
-            card.classList.add("centered")
-            card.setAttribute("data-note", row.note)
-            card.setAttribute("draggable", "true")
-            card.innerText = row.text;
             temp.appendChild(card);
         }
         div.appendChild(temp);
@@ -56,13 +57,13 @@ function constructTeams(){
         let temp = document.createElement("div");
         temp.classList.add("team")
         temp.ondragover = (event) => {
-            console.log("ondragover")
             currentTeam = {element: temp, value: t};
-            console.log("currentTeam", currentTeam)
             temp.classList.add("team-hover");
             event.preventDefault();
         }
         temp.ondrop = () => {
+            console.log(config.teams[config.teams.indexOf(currentTeam.value)]);
+            console.log(currentCard.value);
             config.teams[config.teams.indexOf(currentTeam.value)].score += currentCard.value;
             currentCard.classList.remove("current-card")
             currentCard.classList.add("done")
