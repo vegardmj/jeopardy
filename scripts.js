@@ -96,7 +96,12 @@ function constructTeams(){
         delButton.innerText = "DELETE";
         delButton.onclick = ()=>{
             team.remove();
-            delete config.teams[config.teams.indexOf(t)];
+            for(let team of config.teams){
+                if(team.name = teamNameElement.innerText){
+                    delete team;
+                    break;
+                }
+            }
         }
         temp.appendChild(teamNameElement);
         temp.appendChild(delButton);
@@ -112,7 +117,6 @@ load();
 
 function load(){
     config = JSON.parse(window.localStorage.getItem("jeopardy"));
-    console.log('config loaded', config)
     if(config == null){
         config = {
         categories: getDefaultCategories(),
