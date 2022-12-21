@@ -89,3 +89,6 @@ button{
 .done{
     visibility: hidden;
 }
+.categories{
+    justify-content: space-around;
+}

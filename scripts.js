@@ -49,42 +49,20 @@ function constructGrid(table){
 
 var config;
 
-test1();
-function test1(){
-    setConfig();
-    constructHeaders(config.categories);
-    constructGrid(config.table);
-}
+import load from './play';
+load();
 
 function save(){
     let tempCategories = [];
     document.querySelectorAll(".category").forEach((element)=>{
         tempCategories.push(element.value);
     })
-    config.categories = categories;
+    config.categories = tempCategories;
     window.localStorage.setItem("jeopardy", JSON.stringify(config))
 }
 function start(){
     window.location = "/jeopardy/play.html";
 }
-
-function setConfig(){
-    let conf = {
-        title: 'JEPORDY',
-        teams: [],
-        categories: [
-            'Category 1',
-            'Category 2',
-            'Category 3',
-            'Category 4',
-            'Category 5',
-        ],
-        table: getTable()
-    }
-
-    config = conf;
-}
-
 
 
 function addTeam(){

@@ -1,9 +1,9 @@
 
-function constructHeaders(categories){
+function constructHeaders(){
     let div = document.getElementById("grid");
     let row = document.createElement("div");
     row.classList.add("row");
-    for(let category of categories){
+    for(let category of config.categories){
         let temp = document.createElement("h2");
         temp.classList.add("centered")
         temp.innerText = category;
@@ -12,9 +12,9 @@ function constructHeaders(categories){
     div.appendChild(row);
 }
 
-function constructGrid(table){
+function constructGrid(){
     let div = document.getElementById("grid");
-    for(let column of table){
+    for(let column of config.table){
         let temp = document.createElement("div");
         temp.classList.add("row")
         for(let row of column){
@@ -79,8 +79,8 @@ load();
 
 function load(){
     config = JSON.parse(window.localStorage.getItem("jeopardy"));
-    constructHeaders(config.categories);
-    constructGrid(config.table);
+    constructHeaders();
+    constructGrid();
     constructTeams()
 }
 
