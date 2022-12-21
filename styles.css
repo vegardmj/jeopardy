@@ -58,6 +58,7 @@ h2.centered{
     padding: 1rem;
     border-radius: 4px;
     background-color: var(--team-color);
+    align-items: center;
 }
 .team-hover{
     border: 4px solid black;
