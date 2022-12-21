@@ -1,4 +1,4 @@
-# jeopardy
+# Jeopardy
 
 ## Usage
 
