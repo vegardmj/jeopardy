@@ -86,3 +86,6 @@ button{
 .team-wrapper{
     display: flex;
 }
+.done{
+    visibility: hidden;
+}

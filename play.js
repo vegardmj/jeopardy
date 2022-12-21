@@ -22,7 +22,9 @@ function constructGrid(table){
             card = document.createElement("div");
             card.classList.add("card")
             card.onclick = () => {
-                console.log("note: " + card.dataset.note);
+                if(card.dataset.note){
+                    console.log("note: " + card.dataset.note);
+                }
             }
             card.ondrop = () => {
                 card.classList.add("done");
@@ -55,7 +57,8 @@ function constructTeams(){
         let temp = document.createElement("div");
         temp.classList.add("team")
         temp.setAttribute("id", "team-id-" + t.name);
-        temp.ondragover = () => {
+        temp.ondragover = (event) => {
+            event.preventDefault();
             currentTeam = t;
         }
         let teamNameElement = document.createElement("h3");
