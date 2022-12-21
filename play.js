@@ -28,6 +28,9 @@ function constructGrid(){
                 card.classList.add("current-card");
                 currentCard = card;
             }
+            card.ondragstart = () => {
+                currentCard = card;
+            }
             card.classList.add("centered")
             card.setAttribute("data-note", row.note)
             card.setAttribute("draggable", "true")
