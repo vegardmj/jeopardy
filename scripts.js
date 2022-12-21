@@ -53,6 +53,7 @@ function constructGrid(){
 var config;
 
 function save(){
+    needSave = false;
     let tempCategories = [];
     document.querySelectorAll(".category").forEach((element)=>{
         tempCategories.push(element.value);
