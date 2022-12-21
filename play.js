@@ -51,8 +51,6 @@ function constructTeams(){
     for(let t of config.teams){
         let team = document.createElement("div");
         team.classList.add("team-wrapper");
-        let scoreCard = document.createElement("div");
-        scoreCard.classList.add("score-card");
         let temp = document.createElement("div");
         temp.classList.add("team")
         temp.setAttribute("id", "team-id-" + t.name);

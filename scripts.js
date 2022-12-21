@@ -11,6 +11,9 @@ function getTable(){
     }
     return table;
 }
+function getDefaultCategories(){
+    return ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"];
+}
 
 function constructHeaders(){
     let div = document.getElementById("grid");
@@ -70,19 +73,7 @@ function addTeam(){
         score: 0
     });
     
-    let div = document.getElementById("teams-container");
-    let team = document.createElement("div");
-    team.classList.add("team-wrapper");
-    let scoreCard = document.createElement("div");
-    scoreCard.classList.add("score-card");
-    let temp = document.createElement("div");
-    temp.classList.add("team")
-    temp.setAttribute("id", "team-id-" + value);
-    let teamNameElement = document.createElement("h3");
-    teamNameElement.innerText = value;
-    temp.appendChild(teamNameElement);
-    team.appendChild(temp);
-    div.appendChild(team);
+    constructTeams()
     
 }
 function removeTeam(){
@@ -95,6 +86,28 @@ function removeTeam(){
     }
     document.getElementById("team-id-" + value).remove();
 }
+function constructTeams(){
+    
+    let master = document.getElementById("teams-wrapper");
+    let div = document.getElementById("teams-container");
+    div.remove();
+    div = document.createElement("div");
+    div.setAttribute("id", "teams-container")
+    
+    for(let t of config.teams){
+        let team = document.createElement("div");
+        team.classList.add("team-wrapper");
+        let temp = document.createElement("div");
+        temp.classList.add("team")
+        temp.setAttribute("id", "team-id-" + t.name);
+        let teamNameElement = document.createElement("h3");
+        teamNameElement.innerText = t.name;
+        temp.appendChild(teamNameElement);
+        team.appendChild(temp);
+        div.appendChild(team);
+    }
+    master.appendChild(div);
+}
 
 
 var config;
@@ -102,6 +115,11 @@ load();
 
 function load(){
     config = JSON.parse(window.localStorage.getItem("jeopardy"));
+    console.log('config loaded', config)
+    if(config == {}){
+        config.categories = getDefaultCategories();
+        config.table = getTable();
+    }
     constructHeaders();
     constructGrid();
     constructTeams()
