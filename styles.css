@@ -86,3 +86,6 @@ button{
     position: absolute;
     bottom: 0;
 }
+.team-wrapper{
+    display: flex;
+}
