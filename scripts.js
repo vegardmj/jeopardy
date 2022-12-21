@@ -11,7 +11,14 @@ function getDummyTable(){
 }
 
 function constructGrid(table){
-
+    let div = document.getElementById("test");
+    for(let column of table){
+        let temp = document.createElement("div");
+        for(let row of column){
+            temp.appendChild('<div class="card">' + row + '</div>');
+        }
+        div.appendChild(temp);
+    }
 }
 
 
