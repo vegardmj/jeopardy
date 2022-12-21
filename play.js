@@ -61,7 +61,7 @@ function constructTeams(){
             temp.classList.add("team-hover");
             event.preventDefault();
         }
-        temp.ondragleave = (event) => {
+        temp.ondragend = (event) => {
             event.preventDefault();
             temp.classList.remove("team-hover");
         }
