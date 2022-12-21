@@ -40,27 +40,29 @@ function constructGrid(){
             card.classList.add("card")
             card.onclick = () => {
                 console.log("add note");
-                let input = document.createElement("input");
-                card.appendChild(input);
-                let button = document.createElement("button");
-                button.innerText = "add note";
-                button.onclick = () => {
-                    row.note = input.value;
-                    console.log("added note: ", row.note);
-                    input.remove();
-                    button.remove();
-                }
-                card.appendChild(button);
+                currentCard = {column, row};
             }
             card.classList.add("centered")
-            card.setAttribute("data-note", row.note)
             card.innerText = row.text;
             temp.appendChild(card);
         }
         div.appendChild(temp);
     }
 }
+function saveNote(){
+    let input = document.getElementById("note-input");
+    input.classList.add("done");
 
+    config.table[config.table.indexOf(currentCard.column)][config.table.indexOf(currentCard.row)].note = input.value;
+    let element = document.querySelector(".add-note-wrapper");
+    element.classList.add("done");
+    
+}
+function cancelNote(){
+    let element = document.querySelector(".add-note-wrapper");
+    element.classList.add("done");
+}
+var currentCard;
 var config;
 
 function save(){
