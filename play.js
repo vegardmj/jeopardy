@@ -27,6 +27,7 @@ function constructGrid(table){
                 }
             }
             card.ondrop = () => {
+                console.log("dropped")
                 card.classList.add("done");
                 config.team[config.team.indexOf(currentTeam)].score += card.value;
             }
@@ -58,6 +59,7 @@ function constructTeams(){
         temp.classList.add("team")
         temp.setAttribute("id", "team-id-" + t.name);
         temp.ondragover = (event) => {
+            console.log("ondragover")
             event.preventDefault();
             currentTeam = t;
         }

@@ -35,7 +35,7 @@ function constructGrid(table){
             card = document.createElement("div");
             card.classList.add("card")
             card.onclick = () => {
-                console.log("note: " + card.dataset.note);
+                console.log("add note");
             }
             card.classList.add("centered")
             card.setAttribute("data-note", row.note)
