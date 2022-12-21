@@ -62,6 +62,7 @@ function constructTeams(){
             console.log("ondragover")
             event.preventDefault();
             currentTeam = t;
+            temp.classList.add("teams-hover");
         }
         let teamNameElement = document.createElement("h3");
         teamNameElement.innerText = t.name + (showScore ? ": " + t.score.toString() : "");
