@@ -61,7 +61,7 @@ function constructTeams(){
             event.preventDefault();
         }
         temp.ondrop = () => {
-            config.teams[config.teams.indexOf(currentTeam.value)].score += card.value;
+            config.teams[config.teams.indexOf(currentTeam.value)].score += currentCard.value;
             currentCard.classList.remove("current-card")
             currentCard.classList.add("done")
             temp.classList.remove("team-hover");
