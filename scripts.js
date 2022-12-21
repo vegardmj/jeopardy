@@ -5,7 +5,7 @@ let scoreValues = [100, 200, 300, 400, 500];
 function getTable(){
     let table = [];
     for(let i = 1; i<6; i++){
-        table.push(["Category " + String.valueOf(i), ...scoreValues]);
+        table.push(["Category " + i.toString(), ...scoreValues]);
     }
     return table;
 }
