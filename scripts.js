@@ -12,12 +12,12 @@ function getTable(){
     return table;
 }
 
-function constructHeaders(categories){
+function constructHeaders(){
     let div = document.getElementById("grid");
     let row = document.createElement("div");
     row.classList.add("row");
     row.classList.add("centered")
-    for(let category of categories){
+    for(let category of config.categories){
         let temp = document.createElement("input");
         row.classList.add("category")
         temp.value = category;
@@ -26,9 +26,9 @@ function constructHeaders(categories){
     div.appendChild(row);
 }
 
-function constructGrid(table){
+function constructGrid(){
     let div = document.getElementById("grid");
-    for(let column of table){
+    for(let column of config.table){
         let temp = document.createElement("div");
         temp.classList.add("row")
         for(let row of column){
