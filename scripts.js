@@ -98,12 +98,7 @@ function constructTeams(){
         delButton.innerText = "DELETE";
         delButton.onclick = ()=>{
             team.remove();
-            for(let team of config.teams){
-                if(team.name = teamNameElement.innerText){
-                    delete team;
-                    break;
-                }
-            }
+            delete config.teams[config.teams.indexOf(t)]
         }
         temp.appendChild(teamNameElement);
         temp.appendChild(delButton);
