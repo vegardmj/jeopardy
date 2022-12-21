@@ -31,18 +31,16 @@ function constructGrid(table){
         let temp = document.createElement("div");
         temp.classList.add("row")
         for(let row of column){
-            let rowElement;
-            rowElement = document.createElement("button");
-            rowElement.classList.add("card")
-            /*
-            rowElement.onclick = (this) => {
-                console.log(this.dataset.note);
+            let card;
+            card = document.createElement("button");
+            card.classList.add("card")
+            card.onclick = () => {
+                console.log(card.dataset.note);
             }
-            */
-            rowElement.classList.add("centered")
-            rowElement.setAttribute("data-note", row.value)
-            rowElement.innerText = row.value;
-            temp.appendChild(rowElement);
+            card.classList.add("centered")
+            card.setAttribute("data-note", row.value)
+            card.innerText = row.value;
+            temp.appendChild(card);
         }
         div.appendChild(temp);
     }
