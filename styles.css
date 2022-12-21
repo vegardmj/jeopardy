@@ -89,7 +89,7 @@ button{
 .done{
     visibility: hidden;
 }
-.categories{
+.category{
     justify-content: space-around;
 }
 .current-card{
