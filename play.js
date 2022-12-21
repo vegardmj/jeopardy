@@ -26,6 +26,7 @@ function constructGrid(table){
             }
             card.classList.add("centered")
             card.setAttribute("data-note", row.note)
+            card.setAttribute("dragable", "true")
             card.innerText = row.value;
             temp.appendChild(card);
         }

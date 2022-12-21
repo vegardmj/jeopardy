@@ -83,7 +83,7 @@ button{
     justify-content: space-between;
     background-color: var(--footer-color);
     height: auto;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 .team-wrapper{
