@@ -23,7 +23,7 @@ function constructGrid(){
             card.classList.add("card")
             card.classList.add("centered")
             card.setAttribute("data-note", row.note)
-            card.setAttribute("value", row.value)
+            card.setAttribute("data-value", row.value)
             card.setAttribute("draggable", "true")
             card.innerText = row.text;
             card.onclick = () => {
@@ -64,7 +64,7 @@ function constructTeams(){
         temp.ondrop = () => {
             console.log(config.teams[config.teams.indexOf(currentTeam.value)]);
             console.log(currentCard.value);
-            config.teams[config.teams.indexOf(currentTeam.value)].score += Number(currentCard.value);
+            config.teams[config.teams.indexOf(currentTeam.value)].score += Number(currentCard.dataset.value);
             currentCard.classList.remove("current-card")
             currentCard.classList.add("done")
             temp.classList.remove("team-hover");
