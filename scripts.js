@@ -5,7 +5,11 @@ let scoreValues = [{value: 100}, {value: 200}, {value: 300}, {value: 400}, {valu
 function getTable(){
     let table = [];
     for(let i = 1; i<6; i++){
-        table.push([{value: "Category " + i.toString()}, ...scoreValues]);
+        let temp = [];
+        for(let j = 1; j<6; j++){
+            temp.push((i*100).toString());
+        }
+        table.push(temp);
     }
     return table;
 }
@@ -14,18 +18,17 @@ function constructGrid(table){
     let div = document.getElementById("test");
     for(let column of table){
         let temp = document.createElement("div");
-        temp.classList.add("column")
+        temp.classList.add("row")
         for(let row of column){
-            let rowElement = document.createElement("button");
+            let rowElement;
+            rowElement = document.createElement("button");
+            rowElement.classList.add("card")
             /*
             rowElement.onclick = (this) => {
                 console.log(this.dataset.note);
             }
             */
             rowElement.classList.add("centered")
-            if(column.indexOf(row) != 0){
-                rowElement.classList.add("card")
-            }
             rowElement.setAttribute("data-note", row.value)
             rowElement.innerText = row.value;
             temp.appendChild(rowElement);
@@ -62,6 +65,10 @@ function setConfig(){
                 name: 'Team 2',
                 score: 300
             },
+        ],
+        categories = [
+            'Category 1',
+            'Category 2'
         ],
         table: getTable()
     }
