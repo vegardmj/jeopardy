@@ -68,19 +68,17 @@ function start(){
     window.location = "/jeopardy/play.html";
 }
 
-
 function addTeam(){
-    let value = document.getElementById("team-input").value;
+    let element = document.getElementById("team-input");
     config.teams.push({
-        name: value,
+        name: element.value,
         score: 0
     });
-    
-    constructTeams()
-    
+    element.value = "";
+    constructTeams();
 }
+
 function constructTeams(){
-    
     let master = document.getElementById("teams-wrapper");
     let div = document.getElementById("teams-container");
     div.remove();
