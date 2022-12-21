@@ -42,7 +42,7 @@ function constructGrid(){
             card.classList.add("card")
             card.onclick = () => {
                 console.log("add note");
-                currentCard = {column: column, row: row, columnIndex: i, rowIndex: j};
+                //currentCard = {column: column, row: row, columnIndex: i, rowIndex: j};
                 let element = document.querySelector(".add-note-wrapper");
                 //element.classList.remove("done");
             }
