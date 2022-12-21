@@ -61,3 +61,21 @@ function setConfig(){
 
     config = conf;
 }
+
+
+function addTeam(){
+    let value = document.getElementById("team-input");
+    config.teams.push({
+        name: value,
+        score: 0
+    });
+}
+function removeTeam(){
+    let value = document.getElementById("team-input");
+    for(let i = 0; i < config.teams.length; i++){
+        if(config.teams[i].name == value){
+            delete config.teams[i];
+            break;
+        }
+    }
+}
