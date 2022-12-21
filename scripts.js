@@ -17,7 +17,8 @@ function constructGrid(table){
         temp.classList.add("column")
         for(let row of column){
             let rowElement = document.createElement("div");
-            if(column.indexOf(row) != 0){
+            rowElement.classList.add("centered")
+                if(column.indexOf(row) != 0){
                 rowElement.classList.add("card")
             }
             rowElement.innerText = row;
