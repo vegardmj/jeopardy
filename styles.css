@@ -1,5 +1,6 @@
 :root{
     --card-color: aquamarine;
+    --button-color: dodgerblue;
 }
 
 html, body {
@@ -44,4 +45,7 @@ html, body {
 }
 .score-board{
     width: 200px;
+}
+button{
+    background-color: var(--button-color);
 }
