@@ -2,6 +2,7 @@
     --card-color: aquamarine;
     --button-color: deepskyblue;
     --team-color: floralwhite;
+    --active-team-color: darkseagreen;
 }
 
 html, body {
@@ -53,6 +54,10 @@ h2.centered{
     padding: 1rem;
     border-radius: 4px;
     background-color: var(--team-color);
+}
+.team:hover{
+    border: 4px solid black;
+    background-color: var(--active-team-color);
 }
 .score-board{
     width: 200px;
