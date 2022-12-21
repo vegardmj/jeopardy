@@ -8,7 +8,7 @@ html, body {
     height: 100%;
 }
 
-.boards{
+.board{
     display: flex;
     flex-direction: row;
 }
