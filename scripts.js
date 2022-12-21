@@ -16,6 +16,7 @@ function constructGrid(table){
         let temp = document.createElement("div");
         for(let row of column){
             let rowElement = document.createElement("div");
+            rowElement.classList.add("card")
             rowElement.innerText = row;
             temp.appendChild(rowElement);
         }
