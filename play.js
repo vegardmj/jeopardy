@@ -53,7 +53,6 @@ function constructTeams(){
         team.classList.add("team-wrapper");
         let temp = document.createElement("div");
         temp.classList.add("team")
-        temp.setAttribute("id", "team-id-" + t.name);
         temp.ondragover = (event) => {
             console.log("ondragover")
             currentTeam = {element: temp, value: t};
