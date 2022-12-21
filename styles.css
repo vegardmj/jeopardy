@@ -61,9 +61,6 @@ h2.centered{
     border: 4px solid black;
     background-color: var(--active-team-color);
 }
-.score-board{
-    width: 200px;
-}
 button{
     background-color: var(--button-color);
 }

@@ -40,10 +40,14 @@ function constructGrid(table){
 
 var currentTeam;
 
-function constructTeams(teams){
+function constructTeams(){
+    let master = document.getElementById("teams-wrapper");
     let div = document.getElementById("teams-container");
+    div.remove();
+    div = document.createElement("div");
+    div.setAttribute("id", "teams-container")
     
-    for(let t of teams){
+    for(let t of config.teams){
         let team = document.createElement("div");
         team.classList.add("team-wrapper");
         let scoreCard = document.createElement("div");
@@ -60,6 +64,7 @@ function constructTeams(teams){
         team.appendChild(temp);
         div.appendChild(team);
     }
+    master.appendChild(div);
 }
 
 var config;
@@ -70,10 +75,11 @@ function load(){
     config = JSON.parse(window.localStorage.getItem("jeopardy"));
     constructHeaders(config.categories);
     constructGrid(config.table);
-    constructTeams(config.teams)
+    constructTeams()
 }
 
 var showScore = false;
 function toggleScore(){
     showScore = !showScore;
+    constructTeams()
 }
