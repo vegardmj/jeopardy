@@ -63,6 +63,7 @@ function save(){
     
 }
 function start(){
+    if(needSave) return;
     window.location = "/jeopardy/play.html";
 }
 
@@ -111,13 +112,14 @@ function constructTeams(){
     master.appendChild(div);
 }
 
-
+var needSave = false;
 var config;
 load();
 
 function load(){
     config = JSON.parse(window.localStorage.getItem("jeopardy"));
     if(config == null){
+        needSave = true;
         config = {
         categories: getDefaultCategories(),
         table: getTable(),
