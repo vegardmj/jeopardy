@@ -16,12 +16,15 @@ function constructGrid(table){
         let temp = document.createElement("div");
         temp.classList.add("column")
         for(let row of column){
-            let rowElement = document.createElement("div");
+            let rowElement = document.createElement("button");
+            rowElement.onclick = (this) => {
+                console.log(this.dataset.note);
+            }
             rowElement.classList.add("centered")
             if(column.indexOf(row) != 0){
                 rowElement.classList.add("card")
             }
-            rowElement.setAttribute("data-note", row.note)
+            rowElement.setAttribute("data-note", row.value)
             rowElement.innerText = row.value;
             temp.appendChild(rowElement);
         }
