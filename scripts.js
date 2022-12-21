@@ -12,8 +12,21 @@ function getTable(){
     return table;
 }
 
+function constructHeaders(categories){
+    let div = document.getElementById("grid");
+    let row = document.createElement("div");
+    row.classList.add("row");
+    for(let category of categories){
+        let temp = document.createElement("h2");
+        temp.classList.add("centered")
+        temp.innerText = category;
+        row.appendChild(temp);
+    }
+    div.appendChild(row);
+}
+
 function constructGrid(table){
-    let div = document.getElementById("test");
+    let div = document.getElementById("grid");
     for(let column of table){
         let temp = document.createElement("div");
         temp.classList.add("row")
@@ -38,7 +51,9 @@ function constructGrid(table){
 
 test1();
 function test1(){
-    constructGrid(getTable());
+    setConfig();
+    constructHeaders(config.categories);
+    constructGrid(config.table);
 }
 
 
@@ -54,19 +69,13 @@ function save(){
 function setConfig(){
     let conf = {
         title: 'JEPORDY',
-        teams: [
-            {
-                name: 'Team 1',
-                score: 200
-            },
-            {
-                name: 'Team 2',
-                score: 300
-            },
-        ],
+        teams: [],
         categories: [
             'Category 1',
-            'Category 2'
+            'Category 2',
+            'Category 3',
+            'Category 4',
+            'Category 5',
         ],
         table: getTable()
     }
@@ -89,7 +98,7 @@ function addTeam(){
 function removeTeam(){
     console.log(config.teams);
     let value = document.getElementById("team-input").value;
-    for(let i = 0; i < config.teams.length; i++){
+    for(let i = 0; i < config?.teams.length; i++){
         if(config.teams[i].name == value){
             delete config.teams[i];
             break;
