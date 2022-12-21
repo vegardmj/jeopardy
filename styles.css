@@ -94,6 +94,11 @@ button{
 .team-wrapper{
     display: flex;
 }
+.teams-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3rem;
+}
 .done{
     visibility: hidden;
 }
