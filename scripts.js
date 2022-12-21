@@ -74,6 +74,7 @@ function addTeam(){
         name: value,
         score: 0
     });
+    renderTeams();
 }
 function removeTeam(){
     let value = document.getElementById("team-input").value;
@@ -83,6 +84,7 @@ function removeTeam(){
             break;
         }
     }
+    renderTeams();
 }
 function renderTeams(){
     let div = document.getElementById("teams-container");
