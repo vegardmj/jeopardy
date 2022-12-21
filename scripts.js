@@ -2,7 +2,7 @@
 
 let scoreValues = [100, 200, 300, 400, 500];
 
-function getDummyTable(){
+function getTable(){
     let table = [];
     for(let i = 1; i<6; i++){
         table.push(["Category " + String.valueOf(i), ...scoreValues]);
@@ -27,7 +27,7 @@ function constructGrid(table){
 
 
 function test1(){
-    constructGrid(getDummyTable());
+    constructGrid(getTable());
 }
 
 
@@ -53,7 +53,7 @@ function setConfig(){
                 score: 300
             },
         ],
-        table: getDummyTable()
+        table: getTable()
     }
 
     config = conf;
