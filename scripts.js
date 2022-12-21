@@ -26,7 +26,7 @@ function constructGrid(table){
 }
 
 
-
+test1();
 function test1(){
     constructGrid(getTable());
 }
