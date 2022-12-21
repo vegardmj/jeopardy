@@ -61,7 +61,7 @@ function save(){
     console.log("tempCategories", tempCategories)
     config.categories = tempCategories;
     window.localStorage.setItem("jeopardy", JSON.stringify(config))
-    
+    alert("Your Jeopardy has been saved!")
 }
 function start(){
     if(needSave) return;
