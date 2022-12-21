@@ -49,9 +49,6 @@ function constructGrid(table){
 
 var config;
 
-import load from './play';
-load();
-
 function save(){
     let tempCategories = [];
     document.querySelectorAll(".category").forEach((element)=>{
@@ -96,4 +93,15 @@ function removeTeam(){
         }
     }
     document.getElementById("team-id-" + value).remove();
+}
+
+
+var config;
+load();
+
+function load(){
+    config = JSON.parse(window.localStorage.getItem("jeopardy"));
+    constructHeaders();
+    constructGrid();
+    constructTeams()
 }
