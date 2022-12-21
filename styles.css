@@ -8,6 +8,7 @@
 
 html, body {
     height: 100%;
+    margin: 0;
 }
 .main{
     display: flex;
@@ -68,20 +69,20 @@ button{
 }
 
 .big-button{
-    min-width: 3rem;
+    min-width: 5rem;
     min-height: 2rem;
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1rem;
 }
 .button-container{
     display: flex;
     width: 100%;
     justify-content: space-between;
-    margin-top: 2rem;
     background-color: var(--footer-color);
-    height: 4rem;
+    height: auto;
     position: absolute;
-    bottom: 4rem;
+    bottom: 0;
 }
