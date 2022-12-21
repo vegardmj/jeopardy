@@ -35,10 +35,10 @@ function constructGrid(table){
             card = document.createElement("button");
             card.classList.add("card")
             card.onclick = () => {
-                console.log(card.dataset.note);
+                console.log("note: " + card.dataset.note);
             }
             card.classList.add("centered")
-            card.setAttribute("data-note", row.value)
+            card.setAttribute("data-note", row.note)
             card.innerText = row.value;
             temp.appendChild(card);
         }
@@ -98,8 +98,8 @@ function addTeam(){
 function removeTeam(){
     console.log(config.teams);
     let value = document.getElementById("team-input").value;
-    for(let i = 0; i < config?.teams.length; i++){
-        if(config.teams[i].name == value){
+    for(let i = 0; i < config.teams.length; i++){
+        if(config.teams[i]?.name == value){
             delete config.teams[i];
             break;
         }
