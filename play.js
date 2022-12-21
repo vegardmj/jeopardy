@@ -51,13 +51,14 @@ function constructTeams(){
     div = document.createElement("div");
     div.setAttribute("id", "teams-container")
     
-    for(let t of config.teams){
+    for(let i = 0; i < config.teams.length; i++){
+        let t = config.teams[i];
         let team = document.createElement("div");
         team.classList.add("team-wrapper");
         let temp = document.createElement("div");
         temp.classList.add("team")
         temp.ondragover = (event) => {
-            currentTeam = {element: temp, value: t};
+            currentTeam = {element: temp, value: t, teamIndex: i};
             temp.classList.add("team-hover");
             event.preventDefault();
         }
@@ -66,7 +67,7 @@ function constructTeams(){
             temp.classList.remove("team-hover");
         }
         temp.ondrop = () => {
-            config.teams[config.teams.indexOf(currentTeam.value)].score += Number(currentCard.dataset.value);
+            config.teams[i].score += Number(currentCard.dataset.value);
             currentCard.classList.remove("current-card")
             currentCard.classList.add("done")
             temp.classList.remove("team-hover");
@@ -85,7 +86,7 @@ function constructTeams(){
 }
 
 function undo(){
-    config.teams[config.teams.indexOf(currentTeam.value)].score -= Number(currentCard.dataset.value);
+    config.teams[currentTeam.teamIndex].score -= Number(currentCard.dataset.value);
     currentCard.classList.remove("done");
     constructTeams()
 

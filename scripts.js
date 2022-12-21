@@ -31,16 +31,18 @@ function constructHeaders(){
 
 function constructGrid(){
     let div = document.getElementById("grid");
-    for(let column of config.table){
+    for(let i = 0; i < config.table.length; i++){
+        let column = config.table[i];
         let temp = document.createElement("div");
         temp.classList.add("row")
-        for(let row of column){
+        for(let j = 0; j < column.length; j++){
+            let column = config.table[j];
             let card;
             card = document.createElement("div");
             card.classList.add("card")
             card.onclick = () => {
                 console.log("add note");
-                currentCard = {column, row};
+                currentCard = {column: column, row: row, columnIndex: i, rowIndex: j};
                 let element = document.querySelector(".add-note-wrapper");
                 element.classList.remove("done");
             }
@@ -53,8 +55,7 @@ function constructGrid(){
 }
 function saveNote(){
     let input = document.getElementById("note-input");
-
-    config.table[config.table.indexOf(currentCard.column)][config.table.indexOf(currentCard.row)]["note"] = input.value;
+    config.table[currentCard.columnIndex][currentCard.rowIndex] = input.value;
     let element = document.querySelector(".add-note-wrapper");
     element.classList.add("done");
     
@@ -99,7 +100,8 @@ function constructTeams(){
     div = document.createElement("div");
     div.setAttribute("id", "teams-container")
     
-    for(let t of config.teams){
+    for(let i = 0; i < config.teams.length; i++){
+        let t = config.teams[i]
         let team = document.createElement("div");
         team.classList.add("team-wrapper");
         let temp = document.createElement("div");
@@ -110,7 +112,7 @@ function constructTeams(){
         delButton.innerText = "DELETE";
         delButton.onclick = ()=>{
             team.remove();
-            config.teams.splice(config.teams.indexOf(t), 1);
+            config.teams.splice(i, 1);
         }
         temp.appendChild(teamNameElement);
         temp.appendChild(delButton);
