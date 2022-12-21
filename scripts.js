@@ -36,7 +36,7 @@ function constructGrid(){
         let temp = document.createElement("div");
         temp.classList.add("row")
         for(let j = 0; j < column.length; j++){
-            let column = config.table[j];
+            let row = config.table[j];
             let card;
             card = document.createElement("div");
             card.classList.add("card")
