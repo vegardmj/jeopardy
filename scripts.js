@@ -1,7 +1,5 @@
 
 
-let scoreValues = [{value: 100}, {value: 200}, {value: 300}, {value: 400}, {value: 500}];
-
 function getTable(){
     let table = [];
     for(let i = 1; i<6; i++){
