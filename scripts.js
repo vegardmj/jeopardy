@@ -48,6 +48,7 @@ function constructGrid(table){
     }
 }
 
+var config;
 
 test1();
 function test1(){
@@ -84,9 +85,7 @@ function setConfig(){
 }
 
 
-var config = {
-    teams: []
-}
+
 function addTeam(){
     let value = document.getElementById("team-input").value;
     config.teams.push({
