@@ -19,14 +19,14 @@ function constructGrid(table){
         temp.classList.add("row")
         for(let row of column){
             let card;
-            card = document.createElement("button");
+            card = document.createElement("div");
             card.classList.add("card")
             card.onclick = () => {
                 console.log("note: " + card.dataset.note);
             }
             card.classList.add("centered")
             card.setAttribute("data-note", row.note)
-            card.setAttribute("dragable", "true")
+            card.setAttribute("draggable", "true")
             card.innerText = row.value;
             temp.appendChild(card);
         }
