@@ -6,8 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeopardy</title>
 
+    <link href="./styles.css" rel="stylesheet" type="text/css" />
+    <script src="./play.js" defer></script>
 </head>
 <body>
-    <h1>YOU ARE PLAYING</h1>
+    <div class="main">
+        <h1>Jeopardy</h1>
+        <div class="boards">
+            <div class="board" id="grid"></div>
+        </div>
+    </div>
+    <div class="score-board" id="teams-container"></div>
+
+    <div class="button-container">
+        <button class="big-button" onclick="save()">SAVE</button>
+        <button class="big-button" onclick="start()">START</button>
+    </div>
 </body>
 </html>
