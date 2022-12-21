@@ -68,6 +68,7 @@ function constructTeams(){
             currentCard.classList.remove("current-card")
             currentCard.classList.add("done")
             temp.classList.remove("team-hover");
+            constructTeams()
         }
         let teamNameElement = document.createElement("h3");
         teamNameElement.innerText = t.name + (showScore ? ": " + t.score.toString() : "");
