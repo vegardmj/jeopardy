@@ -55,12 +55,6 @@ function test1(){
     constructGrid(config.table);
 }
 
-
-function cardClicked(event){
-    console.log(event.target);
-}
-
-
 function save(){
     window.localStorage.setItem("jeopardy", JSON.stringify(config))
 }
@@ -105,7 +99,6 @@ function addTeam(){
     
 }
 function removeTeam(){
-    console.log(config.teams);
     let value = document.getElementById("team-input").value;
     for(let i = 0; i < config.teams.length; i++){
         if(config.teams[i]?.name == value){
