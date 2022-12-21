@@ -50,11 +50,11 @@ function constructTeams(){
     div.remove();
     div = document.createElement("div");
     div.setAttribute("id", "teams-container")
+    div.classList.add("team-wrapper");
     
     for(let i = 0; i < config.teams.length; i++){
         let t = config.teams[i];
         let team = document.createElement("div");
-        team.classList.add("team-wrapper");
         let temp = document.createElement("div");
         temp.classList.add("team")
         temp.ondragover = (event) => {
