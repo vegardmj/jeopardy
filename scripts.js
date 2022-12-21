@@ -40,6 +40,17 @@ function constructGrid(){
             card.classList.add("card")
             card.onclick = () => {
                 console.log("add note");
+                let input = document.createElement("input");
+                card.appendChild(input);
+                let button = document.createElement("button");
+                button.innerText = "add note";
+                button.onclick = () => {
+                    row.note = input.value;
+                    console.log("added note: ", row.note);
+                    input.remove();
+                    button.remove();
+                }
+                card.appendChild(button);
             }
             card.classList.add("centered")
             card.setAttribute("data-note", row.note)
