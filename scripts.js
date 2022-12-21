@@ -53,9 +53,8 @@ function constructGrid(){
 }
 function saveNote(){
     let input = document.getElementById("note-input");
-    input.classList.add("done");
 
-    config.table[config.table.indexOf(currentCard.column)][config.table.indexOf(currentCard.row)].note = input.value;
+    config.table[config.table.indexOf(currentCard.column)][config.table.indexOf(currentCard.row)]["note"] = input.value;
     let element = document.querySelector(".add-note-wrapper");
     element.classList.add("done");
     
