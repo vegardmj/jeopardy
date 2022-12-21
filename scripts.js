@@ -66,7 +66,7 @@ function setConfig(){
                 score: 300
             },
         ],
-        categories = [
+        categories: [
             'Category 1',
             'Category 2'
         ],
