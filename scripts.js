@@ -77,16 +77,6 @@ function addTeam(){
     constructTeams()
     
 }
-function removeTeam(){
-    let value = document.getElementById("team-input").value;
-    for(let i = 0; i < config.teams.length; i++){
-        if(config.teams[i]?.name == value){
-            delete config.teams[i];
-            break;
-        }
-    }
-    document.getElementById("team-id-" + value).remove();
-}
 function constructTeams(){
     
     let master = document.getElementById("teams-wrapper");
@@ -100,13 +90,13 @@ function constructTeams(){
         team.classList.add("team-wrapper");
         let temp = document.createElement("div");
         temp.classList.add("team")
-        temp.setAttribute("id", "team-id-" + t.name);
         let teamNameElement = document.createElement("h3");
         teamNameElement.innerText = t.name;
         let delButton = document.createElement("button");
         teamNameElement.innerText = "DELETE";
         delButton.onclick = ()=>{
             team.remove();
+            delete config.teams[config.teams.indexOf(t)];
         }
         temp.appendChild(teamNameElement);
         team.appendChild(temp);
