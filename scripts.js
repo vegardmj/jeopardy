@@ -96,6 +96,7 @@ function addTeam(){
     
     let div = document.getElementById("teams-container");
     let temp = document.createElement("div");
+    temp.classList.add("team")
     temp.setAttribute("id", "team-id-" + value);
     temp.innerText = value;
     div.appendChild(temp);

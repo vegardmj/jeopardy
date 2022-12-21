@@ -32,16 +32,23 @@ html, body {
 }
 .card{
     height: 10%;
+    width: 100%;
     background-color: var(--card-color);
     margin: 0.5rem;
     padding: 1rem;
     border-radius: 4px;
 }
 .centered{
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+h2.centered{
+    width: 100%;
+}
+
+.team{
+
 }
 .score-board{
     width: 200px;
