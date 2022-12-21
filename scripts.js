@@ -116,7 +116,7 @@ load();
 function load(){
     config = JSON.parse(window.localStorage.getItem("jeopardy"));
     console.log('config loaded', config)
-    if(config == {}){
+    if(config == null){
         config.categories = getDefaultCategories();
         config.table = getTable();
     }
