@@ -61,6 +61,10 @@ function constructTeams(){
             temp.classList.add("team-hover");
             event.preventDefault();
         }
+        temp.ondragleave = () => {
+            temp.classList.remove("team-hover");
+            currentTeam = {};
+        }
         temp.ondrop = () => {
             console.log(config.teams[config.teams.indexOf(currentTeam.value)]);
             console.log(currentCard.value);
