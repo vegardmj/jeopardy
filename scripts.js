@@ -7,7 +7,7 @@ function getTable(){
     for(let i = 1; i<6; i++){
         let temp = [];
         for(let j = 1; j<6; j++){
-            temp.push((i*100).toString());
+            temp.push(i.toString());
         }
         table.push(temp);
     }
