@@ -10,11 +10,11 @@ html, body {
 
 .boards{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 .column{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 .card{
     width: 100%;
