@@ -117,10 +117,13 @@ function load(){
     config = JSON.parse(window.localStorage.getItem("jeopardy"));
     console.log('config loaded', config)
     if(config == null){
-        config.categories = getDefaultCategories();
-        config.table = getTable();
+        config = {
+        categories: getDefaultCategories(),
+        table: getTable(),
+        teams: []
+        }
     }
     constructHeaders();
     constructGrid();
-    constructTeams()
+    constructTeams();
 }
