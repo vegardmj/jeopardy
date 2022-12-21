@@ -69,3 +69,8 @@ button{
     justify-content: center;
     align-items: center;
 }
+.button-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
